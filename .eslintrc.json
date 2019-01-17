@@ -1,0 +1,54 @@
+{
+   "root": true,
+   "extends": "eslint:recommended",
+   "env": {
+      "node": true,
+      "es6": true
+   },
+   "rules": {
+      "eqeqeq": "error",
+      "global-require": "error",
+      "handle-callback-err": "error",
+      "no-console": "off",
+      "no-loop-func": "error",
+      "no-multi-spaces": "warn",
+      "no-new-require": "error",
+      "no-path-concat": "error",
+      "no-trailing-spaces": [
+         "error",
+         {
+            "skipBlankLines": true
+         }
+      ],
+      "no-unused-vars": "warn",
+      "quotes": [
+         "error",
+         "single",
+         {
+            "allowTemplateLiterals": true
+         }
+      ],
+      "semi": [
+         "error",
+         "never"
+      ],
+      "spaced-comment": [
+         "error",
+         "always",
+         {
+            "markers": [
+               "/"
+            ],
+            "exceptions": [
+               "*"
+            ],
+            "block": {
+               "balanced": true
+            }
+         }
+      ]
+   },
+   "globals": {
+      "logger": false
+   }
+}

@@ -1,0 +1,29 @@
+service: node-response-size-error
+
+runtime: nodejs8
+
+inbound_services:
+  - warmup
+
+instance_class: F2
+
+automatic_scaling:
+  max_concurrent_requests: 30
+  max_pending_latency: 800ms
+  min_pending_latency: 300ms
+
+handlers:
+  - url: .*
+    secure: always
+    redirect_http_response_code: 301
+    script: auto
+
+error_handlers:
+  - error_code: over_quota
+    file: errors/over_quota.html
+
+  - error_code: timeout
+    file: errors/timeout.html
+
+  - file: errors/default.html
+
